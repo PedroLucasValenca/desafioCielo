@@ -1,0 +1,14 @@
+<div class="box">
+  <h2 class="title">Período Resumido</h2>
+
+  <div  class="informations-summary">
+    <span class="information-text information-period "> De: {{summary?.initialDate | date : 'dd/MM/yyyy'}} Até: {{summary?.finalDate | date : 'dd/MM/yyyy'}} </span>
+  </div>
+
+  <div class="informations-summary">
+    <span class="information-text">Montante Total: {{summary?.totalAmount | currency : 'BRL' }}</span>
+    <span class="information-text">Valor Médio Total: {{summary?.totalAverageAmount | currency : 'BRL' }}</span>
+    <span class="information-text">Valor Líquido Total: {{summary?.totalNetAmount | currency : 'BRL' }}</span>
+    <span class="information-text">Quantidade Total: {{summary?.totalQuantity | currency : 'BRL' }}</span>
+  </div>
+</div>
