@@ -1,0 +1,112 @@
+@import '././../../variables.scss';
+.informations {
+  display: flex;
+  justify-content: space-around;
+    .itens {
+      width: 48%;
+    }
+
+  .box {
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    padding: 20px 10px 10px 10px;
+    min-height: 200px;
+    .title {
+      font-weight: bold;
+      margin-bottom: 10px;
+      display: inline;
+      color: $primary-color;
+    }
+    .accordion{
+
+      max-width: 500px;
+      margin: auto;
+      position: relative;
+      box-shadow: 1px 0px 1.2px 0px #e3e3e3;
+      input{
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        opacity:0;
+        visibility: 0;
+      }
+
+      input:checked ~ h1 label::before{
+        border-left:8px solid transparent;
+        border-top:12px solid white;
+        margin-top:12px;
+        margin-right:10px;
+      }
+
+      input:checked ~ h1 ~ div.texto{ max-height:200px; }
+
+      h1{
+        background: $primary-color;
+        color:white;
+        font-size: 1em;
+        padding: 0.8em 1em;
+        position: relative;
+        transition: 0.5s;
+      }
+
+      h1:hover { background-color:#0762c2; color:#eee003; }
+
+      label{
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: center;
+        .purchase-reference {
+          display: inline-grid;
+        margin: 5px
+        }
+      }
+      label::before{
+        content:"";
+        display: inline-block;
+        border: 8px solid transparent;
+        border-left:12px solid white;
+      }
+      div.texto{
+        max-height:0px;
+        overflow: hidden;
+        transition:max-height 0.5s;
+        background-color: white;
+        box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.2);
+        .line-information {
+          display: flex;
+          margin: 10px;
+          .position-informations {
+            display: grid;
+            width: 50%;
+            padding-left: 10px;
+            place-items: center;
+          }
+        }
+        p {
+          //padding:1em;
+          padding-left: 10px;
+          position: relative;
+          z-index: 1;
+        }
+      }
+
+        a{ color:#007cff; }
+    }
+
+    }
+}
+
+@media (max-width: 600px) {
+
+  .informations {
+    display: unset;
+
+    .itens {
+      width: unset;
+    }
+  }
+
+}
+
